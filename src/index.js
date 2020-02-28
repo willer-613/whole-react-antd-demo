@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-02-27 00:15:56
- * @LastEditTime: 2020-02-27 10:47:25
+ * @LastEditTime: 2020-02-28 14:50:38
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \my-app-first\src\index.js
@@ -15,7 +15,8 @@ import "antd-mobile/dist/antd-mobile.css";
 import Store from "./store/index";
 import { Provider } from "react-redux";
 
-import Router from "./router";
+// import Router from "./router";
+import Router from "./router/routes/";
 
 // import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 

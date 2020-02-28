@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-02-27 11:30:00
- * @LastEditTime: 2020-02-27 12:05:47
+ * @LastEditTime: 2020-02-28 15:01:27
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \my-app-first\src\sagas\index.js
@@ -15,7 +15,7 @@ import {
   all
 } from "redux-saga/effects";
 
-// console.log(delay)
+// console.log(delay) 此处可以异步去处理一些操作
 function* incrementAsync() {
   yield delay(2000);
   yield put({ type: "INCREMENT" });

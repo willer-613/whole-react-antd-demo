@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-02-27 00:15:56
- * @LastEditTime: 2020-02-27 12:04:50
+ * @LastEditTime: 2020-02-28 00:02:10
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \my-app-first\src\App.js
@@ -17,6 +17,9 @@ import {
   incrementAsyncEvery
 } from "./store/actions/index";
 import { connect } from "react-redux";
+
+
+
 
 function App(props) {
   const [visible, setVisible] = useState(true);
@@ -97,6 +100,7 @@ function App(props) {
 const mapStateToProps = state => ({
   number: state.number
 });
+
 const mapDispatchToProps = dispatch => {
   return {
     increment: params => dispatch(increment(params)),
