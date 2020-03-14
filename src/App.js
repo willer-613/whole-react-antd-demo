@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-02-27 00:15:56
- * @LastEditTime: 2020-03-14 21:23:57
+ * @LastEditTime: 2020-03-14 21:34:46
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \my-app-first\src\App.js
@@ -18,15 +18,13 @@ import {
 } from "./store/actions/index";
 import { connect } from "react-redux";
 
-
-
-
 function App(props) {
   const [visible, setVisible] = useState(true);
   const [tag, setTag] = useState("true");
 
   return (
-    <React.Fragment>
+    // <React.Fragment>
+    <>
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
@@ -93,7 +91,8 @@ function App(props) {
           <Test />
         </header>
       </div>
-    </React.Fragment>
+    </>
+    //  </React.Fragment>
   );
 }
 
