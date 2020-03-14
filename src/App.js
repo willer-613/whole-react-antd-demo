@@ -1,14 +1,14 @@
 /*
  * @Author: your name
  * @Date: 2020-02-27 00:15:56
- * @LastEditTime: 2020-02-28 00:02:10
+ * @LastEditTime: 2020-03-14 21:23:57
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \my-app-first\src\App.js
  */
 import React, { useState } from "react";
 import logo from "./logo.svg";
-import "./App.css";
+import "./App.scss";
 import Test from "./views/check";
 import { Button } from "antd-mobile";
 import {

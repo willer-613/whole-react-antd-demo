@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-02-28 14:48:31
- * @LastEditTime: 2020-02-28 14:54:54
+ * @LastEditTime: 2020-03-14 20:51:40
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \my-app-first\src\router\routes\index.js
@@ -16,7 +16,7 @@ import {
   HashRouter
 } from "react-router-dom";
 
-import "./index.css";
+import "./index.scss";
 import { RouterConfig } from "./RouteConfig";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
