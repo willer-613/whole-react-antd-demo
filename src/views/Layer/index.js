@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-03-14 23:08:49
- * @LastEditTime: 2020-03-14 23:52:49
+ * @LastEditTime: 2020-03-15 01:58:36
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \my-app-first\src\views\layer\index.js
@@ -10,6 +10,7 @@ import React, { Component } from "react";
 import { Layout, Menu, Breadcrumb, Tabs } from "antd";
 import { StickyContainer, Sticky } from "react-sticky";
 import "./index.scss";
+import request from "request";
 
 const { Header, Content, Footer } = Layout;
 
@@ -31,7 +32,15 @@ export default class Layer extends Component {
   constructor(props) {
     super(props);
   }
+
   render() {
+    
+    // request("/baidu", function(error, response, body) {
+    //   console.error("error:", error); // Print the error if one occurred
+    //   console.log("statusCode:", response && response.statusCode); // Print the response status code if a response was received
+    //   console.log("body:", body); // Print the HTML for the Google homepage.
+    // });
+
     return (
       <Layout>
         <Header style={{ position: "fixed", zIndex: 1, width: "100%" }}>

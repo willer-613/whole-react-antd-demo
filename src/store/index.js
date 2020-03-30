@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-02-27 10:45:27
- * @LastEditTime: 2020-03-14 18:04:48
+ * @LastEditTime: 2020-03-30 20:13:03
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \my-app-first\src\store\index.js
@@ -25,3 +25,11 @@ const Store = createStore(incrementReducer, applyMiddleware(sagaMiddleware));
 sagaMiddleware.run(rootSaga);
 
 export default Store;
+
+
+
+
+
+
+
+

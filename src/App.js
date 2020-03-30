@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-02-27 00:15:56
- * @LastEditTime: 2020-03-14 21:34:46
+ * @LastEditTime: 2020-03-30 21:39:03
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \my-app-first\src\App.js
@@ -18,7 +18,8 @@ import {
 } from "./store/actions/index";
 import { connect } from "react-redux";
 
-function App(props) {
+const App = function(props) {
+  console.log("App-props", props);
   const [visible, setVisible] = useState(true);
   const [tag, setTag] = useState("true");
 
@@ -94,7 +95,7 @@ function App(props) {
     </>
     //  </React.Fragment>
   );
-}
+};
 
 const mapStateToProps = state => ({
   number: state.number
