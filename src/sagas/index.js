@@ -1,39 +1,20 @@
 /*
  * @Author: your name
- * @Date: 2020-02-27 11:30:00
- * @LastEditTime: 2020-02-28 15:01:27
+ * @Date: 2020-02-27 14:37:25
+ * @LastEditTime: 2020-03-30 23:11:59
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
- * @FilePath: \my-app-first\src\sagas\index.js
+ * @FilePath: \may-whole-app-frm\src\sagas\index.js
  */
-import {
-  put,
-  takeEvery,
-  call,
-  delay,
-  takeLatest,
-  all
-} from "redux-saga/effects";
-
-// console.log(delay) 此处可以异步去处理一些操作
-function* incrementAsync() {
-  yield delay(2000);
-  yield put({ type: "INCREMENT" });
-}
-
-function* watchIncrementLastAsync() {
-  yield takeLatest("INCREMENT_ASYNC_LAST", incrementAsync);
-}
-
-function* watchIncrementEveryAsync() {
-  yield takeEvery("INCREMENT_ASYNC_EVERY", incrementAsync);
-}
+import { all, fork } from "redux-saga/effects";
+import rootUser from "./userFetch";
+import counter from "./counter";
 
 //一次性导入多个异步请求
 export default function* rootSaga() {
   yield all([
     // 同时并发多个
-    watchIncrementLastAsync(),
-    watchIncrementEveryAsync()
+    ...rootUser,
+    ...counter
   ]);
 }

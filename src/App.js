@@ -1,12 +1,12 @@
 /*
  * @Author: your name
  * @Date: 2020-02-27 00:15:56
- * @LastEditTime: 2020-03-30 21:39:03
+ * @LastEditTime: 2020-03-30 22:25:47
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \my-app-first\src\App.js
  */
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import logo from "./logo.svg";
 import "./App.scss";
 import Test from "./views/check";
@@ -22,6 +22,26 @@ const App = function(props) {
   console.log("App-props", props);
   const [visible, setVisible] = useState(true);
   const [tag, setTag] = useState("true");
+
+  useEffect(() => {
+    console.log("caonininini");
+    // window.document.title = `你点击了${props.number}次`;
+    window.document.title = `你点击了${props.logstr}次`;
+
+    // return () => {};
+  }, [props.logstr]); //此处的意思是只有number变化才执行useEffect,如果没有第二个参数则useEffect则再render之后会执行一次，如果第二个参数是空数组则useEffect不会执行
+
+  useEffect(() => {
+    window.addEventListener("click", showLog);
+    //此处必须返回一个函数
+    return () => {
+      window.removeEventListener("click", showLog);
+    };
+  }, [visible]); //此处的意思是只有visible变化才执行useEffect,如果没有第二个参数则useEffect则再render之后会执行一次，如果第二个参数是空数组则useEffect不会执行
+
+  const showLog = e => {
+    console.log("click被触发", e);
+  };
 
   return (
     // <React.Fragment>
@@ -43,13 +63,13 @@ const App = function(props) {
             inline
             onClick={() => {
               setVisible(!visible);
-              console.log(visible);
-              props.history.push({
-                pathname: "/test",
-                state: {
-                  id: 3
-                }
-              });
+              // console.log(visible);
+              // props.history.push({
+              //   pathname: "/test",
+              //   state: {
+              //     id: 3
+              //   }
+              // });
             }}
           >
             一个按钮
@@ -60,7 +80,7 @@ const App = function(props) {
             size="small"
             inline
             onClick={() => {
-              props.increment();
+              props.increment("ss");
             }}
           >
             实时增加
@@ -97,15 +117,17 @@ const App = function(props) {
   );
 };
 
+//需要转成prop的值的state
 const mapStateToProps = state => ({
-  number: state.number
+  number: state.number,
+  logstr: state.logstr
 });
 
 const mapDispatchToProps = dispatch => {
   return {
-    increment: params => dispatch(increment(params)),
-    incrementAsyncLast: params => dispatch(incrementAsyncLast(params)),
-    incrementAsyncEvery: params => dispatch(incrementAsyncEvery(params))
+    increment: pa => dispatch(increment(pa)),
+    incrementAsyncLast: () => dispatch(incrementAsyncLast()),
+    incrementAsyncEvery: () => dispatch(incrementAsyncEvery())
   };
 };
 // export default App;
